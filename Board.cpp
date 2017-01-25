@@ -1,10 +1,5 @@
 #include "board.h"
 
-
-board::board(){
-
-
-}
 /**
 *checks to the board to see if there
 *is a winner
@@ -39,11 +34,11 @@ bool board:: checkBoard()
     }
 
     // diagonals
-    if(positions[4]==positions[0]&& positions[0] == positions[8] )
+    if(positions[0]==positions[4]&& positions[4] == positions[8] )
     {
         return true;
     }
-    if(positions[4]== positions[2] && positions[2]==positions[6])
+    if(positions[2]== positions[4] && positions[4]==positions[6])
     {
         return true;
     }
@@ -51,23 +46,6 @@ bool board:: checkBoard()
     return false;
 }
 
-/**
-* check to see if the moved made is legal.
-* if the move is illegal then one will
-* be subtracted from the turn Count variable
-*/
-void board:: checkSquare(int square, char player, int &turn)
-{
-    if(positions[square]!='O' && positions[square]!='X' )
-    {
-        makeMove(square,player);
-    }
-    else
-    {
-        cout<< "***please choose a square that has not been taken****\n"<<endl;
-        turn--;
-    }
-}
 
 /**
 * prints the current board with the
@@ -82,14 +60,7 @@ void board:: printBrd()
     cout<<"--"<<" "<< "--"<<" "<< "--"<<endl;
     cout<<" "<<positions[6]<<"|"<< " "<<positions[7]<<"|"<< " "<<positions[8]<<endl;
 }
-/**
-*assigns the given index in the array.
-* the player symbol
-*/
-void board:: makeMove(int index, char player)
-{
-    positions[index]= player;
-}
+
 
 /**
 *resets the board.

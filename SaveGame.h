@@ -1,18 +1,19 @@
 #include<fstream>
+#include <iostream>
 
 #ifndef SAVEGAME_H
 #define SAVEGAME_H
 
+using namespace std;
 
 class SaveGame
 {
     public:
-        SaveGame();
-        void save();
+        virtual void formatData()=0;
         void load();
-
+        const ofstream gameFile;
     private:
-    std::ofstream gameFile("savedGame.txt");
+
 };
 
 #endif // SAVEGAME_H

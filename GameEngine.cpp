@@ -17,6 +17,10 @@ void GameEngine:: checkSquare(int square, char player, int &turn)
         turn--;
     }
 }
+string GameEngine:: formatData(){
+
+
+}
 
 /**
 * returns the value of endgame variable
@@ -24,6 +28,7 @@ void GameEngine:: checkSquare(int square, char player, int &turn)
 bool GameEngine:: getEndGame(){
     return endGame;
 }
+
 /**
 *assigns the given index in the array.
 * the player symbol
@@ -32,4 +37,12 @@ void GameEngine:: makeMove(int index, char player)
 {
     positions[index]= player;
     printBrd();
+    endGame= checkBoard();
 }
+
+void GameEngine ::  restGame(){
+
+    restBoard();
+    turnCount=0;
+}
+

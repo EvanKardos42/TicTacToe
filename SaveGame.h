@@ -9,9 +9,10 @@ using namespace std;
 class SaveGame
 {
     public:
-        virtual void formatData()=0;
+        virtual std::string formatData();
         void load();
-        const ofstream gameFile;
+        void save();
+        //const ofstream gameFile;
     private:
 
 };
